@@ -78,21 +78,25 @@ int main(){
             cout << "ccc" << endl;
 
             vector<string>::iterator iter = str.begin();
-            while(iter != str.end()){
-                if( mapiter->first != (*iter) ){
-                    counters[(*iter)]; //登録
-                    cout << (*iter) << "is registered" << endl;
-                }
-                if((*iter) == q ){ //もし単語集に求める単語があれば 
-                    mapiter->second.push_back(lnum); //その行を登録
-                    
+            while(iter != str.end()){ // about this line.
+                while(mapiter != counters.end()){ // about counters
+                    if( mapiter->first != (*iter) ){ //もし単語が無いなら登録する
+                        counters[(*iter)]; //coutters に登録
+                        cout << (*iter) << "　is registered" << endl;
+                    }
+                    if(q == (*iter) ){ //もし単語集に求める単語があれば 
+                        counters[q].push_back(lnum); //その行を登録
+                    }
+                    ++mapiter;
                 }
                 ++iter;
             }
             str.clear();
         } 
     }
-
+    map<string, vector<int> >::iterator ite = counters.begin();
+    cout << "first" << ite->first << endl;
+   // map< string, vector<int> >::iterator iter = counters.begin();
     vector<int>::iterator iter = counters[q].begin();
     cout << q <<  " is appeared "; // c++ is appeared
     while(iter != counters[q].end()){ 
