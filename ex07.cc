@@ -61,7 +61,7 @@ int main(){
         cout << "aaa" << endl;
         ++lnum;
         if(lnum == 1 ) q = line;
-        if(lnum != 1 && line.size() == 0){ 
+        if(lnum != 1 && line.size() != 0){ 
             copy(split(line).begin(), split(line).end(), back_inserter(str));
             cout << "ccc" << endl;
             vector<string>::iterator iter = str.begin();
