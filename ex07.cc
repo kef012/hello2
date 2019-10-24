@@ -58,7 +58,7 @@ vector<string> split(string str){
 int main(){
 
     map<string, vector<int> > counters;
-    map<string, vector<int> >::iterator mapiter = counters.begin();
+    
     vector<string> str;
     string line;
     int lnum = 0; //行番号
@@ -78,7 +78,8 @@ int main(){
             cout << "ccc" << endl;
 
             vector<string>::iterator iter = str.begin();
-            while(iter != str.end()){ // about this line.
+            while(iter != str.end()){ // about a word on the line.
+                map<string, vector<int> >::iterator mapiter = counters.begin();
                 while(mapiter != counters.end()){ // about counters
                     if( mapiter->first != (*iter) ){ //もし単語が無いなら登録する
                         counters[(*iter)]; //coutters に登録
