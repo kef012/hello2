@@ -128,10 +128,16 @@ int main(){
     */
    // map< string, vector<int> >::iterator iter = counters.begin();
 
+    //q = "c++"
+    std::cout << q << " is appeared " << std::endl;
+    //何故か出力されない　is appeared だけ出てくる
     std::cout << "RESULT for " << q << std::endl;
-    std::cout << ">>>>>" << q << " is appeared " << std::endl; // c++ is appeared
-    std::vector<int>::iterator linenumiter = counters[q].begin();
+    //この行は正しく表示される RESULT for c++
+    std::cout << "aaaaa " << q << " is appeared " << q <<"is appeared" << std::endl; // c++ is appeared
+    //なぜか aaaaa と qの中身が表示されない 
     
+
+    std::vector<int>::iterator linenumiter = counters[q].begin();
     while(linenumiter != counters[q].end()){ 
         std::cout << (*linenumiter) << "\t"; // line
         ++linenumiter;
