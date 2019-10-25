@@ -160,14 +160,7 @@ int main(){
         }
        ++mapiter;
     }
-    /*
-    std::vector<int>::iterator linenumiter = counters[q].begin();
-    while(linenumiter != counters[q].end()){ 
-        std::cout << (*linenumiter) << "\t"; // line
-        ++linenumiter;
-    }
-    std::cout << std::endl;
-    */
+  
     return 0;
 
 }
